@@ -1,0 +1,10 @@
+<div class="product">
+  <img [src]="data.thumbnailUrl" alt="">
+  <div class="info">
+    <div class="name">{{ data.name }}</div>
+    <div class="desc"> {{ data.description }} </div>
+    <div class="actions">
+      <button (click)="onDelete(data.id)">Delete</button>
+    </div>
+  </div>
+  </div>

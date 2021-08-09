@@ -1,0 +1,20 @@
+<div class="wrap flex">
+  <div>
+    <div class="mb-1">
+      <input [(ngModel)]="searchText" (input)="onSearch()" type="text">
+    </div>
+
+    <ng-container *ngIf="!searchText">
+      <app-product *ngFor="let p of productsToShow" (delete)="onDelete($event)" [data]="p"></app-product>
+    </ng-container>
+
+    <ng-container *ngIf="searchText">
+      <app-product *ngFor="let p of filteredProducts" (delete)="onDelete($event)"  [data]="p"></app-product>
+    </ng-container>
+    <app-pagination [items]="products" [step]="itemsToShow" (changePage)="onChangePage($event)"></app-pagination>
+  </div>
+  <div>
+
+  </div>
+</div>
+
